@@ -18,7 +18,7 @@ allure generate "ваш путь где создался отчет" --clean
 
 **2. Страница Allure**
 <br>
-<img src='https://github.com/Maksim9056/Examiner/assets/108364585/238543a2-353e-4e86-8406-6ee909c305e6](https://github.com/Maksim9056/AllureDemo/assets/108364585/85207766-c92c-4c63-a5c2-2c028e24cac7' width="450" />
+<img src='https://github.com/Maksim9056/AllureDemo/assets/108364585/85207766-c92c-4c63-a5c2-2c028e24cac7' width="450" />
 </br>
 
 **3. Просматриваем результат теста**
