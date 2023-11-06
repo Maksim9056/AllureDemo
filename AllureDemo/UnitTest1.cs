@@ -25,7 +25,6 @@ namespace AllureDemo
     //}
 
 
-
     [TestFixture(Author = "unickq", Description = "Examples")]
     [AllureNUnit]
     [AllureLink("https://github.com/allure-framework/allure-csharp")]
@@ -52,11 +51,46 @@ namespace AllureDemo
             {
                 using (HttpResponseMessage response = httpClient.SendAsync(request).Result)
                 {
+                    var content = response.Content.ReadAsStringAsync().Result;
+                    Console.WriteLine("Response content: " + content);
+                    Console.WriteLine("Status code: " + (int)response.StatusCode);
                     Assert.AreEqual(200, (int)response.StatusCode);
                 }
             }
         }
     }
+
+    //[TestFixture(Author = "unickq", Description = "Examples")]
+    //[AllureNUnit]
+    //[AllureLink("https://github.com/allure-framework/allure-csharp")]
+    //public class Tests
+    //{
+    //    private HttpClient httpClient;
+
+    //    [OneTimeSetUp]
+    //    public void Setup()
+    //    {
+    //        httpClient = new HttpClient();
+    //    }
+
+    //    [Test]
+    //    [AllureTag("NUnit", "Debug")]
+    //    [AllureIssue("GitHub#1", "https://github.com/allure-framework/allure-csharp")]
+    //    [AllureSeverity(SeverityLevel.critical)]
+    //    [AllureFeature("API")]
+    //    public void TestApiStatus()
+    //    {
+    //        string url = "https://api.sampleapis.com/futurama/questions";
+
+    //        using (HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Get, url))
+    //        {
+    //            using (HttpResponseMessage response = httpClient.SendAsync(request).Result)
+    //            {
+    //                Assert.AreEqual(200, (int)response.StatusCode);
+    //            }
+    //        }
+    //    }
+    //}
 
 
     //[TestFixture(Author = "unickq", Description = "Examples")]

@@ -1,1 +1,1 @@
-{"AllureDemo.Tests.TestApiStatus":{"statistic":{"failed":0,"broken":0,"skipped":0,"passed":1,"unknown":0,"total":1},"items":[{"uid":"3904f8a3b93bcdcf","status":"passed","statusDetails":"TestApiStatus","time":{"start":1699277299605,"stop":1699277300542,"duration":937}}]}}
+{"AllureDemo.Tests.TestApiStatus":{"statistic":{"failed":0,"broken":0,"skipped":0,"passed":1,"unknown":0,"total":1},"items":[{"uid":"3952d1039209b17d","status":"passed","statusDetails":"TestApiStatus","time":{"start":1699278142319,"stop":1699278150450,"duration":8131}}]}}
