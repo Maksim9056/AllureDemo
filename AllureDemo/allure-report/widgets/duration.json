@@ -1,0 +1,1 @@
+[{"uid":"2092718e775f26b3","name":"TestApiStatus","time":{"start":1699276340274,"stop":1699276359812,"duration":19538},"status":"passed","severity":"critical"},{"uid":"fd35398e3d3c5dbf","name":"TestGetRequest","time":{"start":1699274607571,"stop":1699274608499,"duration":928},"status":"failed","severity":"critical"}]
