@@ -1,3 +1,7 @@
 "Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"passed","Mon Nov 06 16:42:22 MSK 2023","Mon Nov 06 16:42:30 MSK 2023","8131","","","","Tests","TestApiStatus","TestApiStatus","Examples
+"passed","Mon Nov 06 18:06:45 MSK 2023","Mon Nov 06 18:06:45 MSK 2023","276","","","","Tests","TestApiStatus","TestApiStatus","Examples
+"
+"passed","Mon Nov 06 18:06:45 MSK 2023","Mon Nov 06 18:06:45 MSK 2023","274","","","","Tests","TestApiPut","TestApiPut","Examples
+"
+"passed","Mon Nov 06 18:06:44 MSK 2023","Mon Nov 06 18:06:45 MSK 2023","905","","","","Tests","TestApiPost","TestApiPost","Examples
 "

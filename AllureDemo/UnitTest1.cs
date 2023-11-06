@@ -10,22 +10,8 @@ using TechTalk.SpecFlow;
 
 namespace AllureDemo
 {
-    //public class Tests
-    //{
-    //    [SetUp]
-    //    public void Setup()
-    //    {
-    //    }
 
-    //    [Test]
-    //    public void Test1()
-    //    {
-    //        Assert.Pass();
-    //    }
-    //}
-
-
-    [TestFixture(Author = "unickq", Description = "Examples")]
+    [TestFixture(Author = "Maksim Bobretsov", Description = "Examples")]
     [AllureNUnit]
     [AllureLink("https://github.com/allure-framework/allure-csharp")]
     public class Tests
@@ -45,6 +31,7 @@ namespace AllureDemo
         [AllureFeature("API")]
         public void TestApiStatus()
         {
+            //Код отправки Get 
             string url = "https://api.sampleapis.com/futurama/questions";
 
             using (HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Get, url))
@@ -52,104 +39,62 @@ namespace AllureDemo
                 using (HttpResponseMessage response = httpClient.SendAsync(request).Result)
                 {
                     var content = response.Content.ReadAsStringAsync().Result;
-                    Console.WriteLine("Response content: " + content);
-                    Console.WriteLine("Status code: " + (int)response.StatusCode);
+                    Console.WriteLine("GET Response content: " + content);
+                    Console.WriteLine("GET Status code: " + (int)response.StatusCode);
                     Assert.AreEqual(200, (int)response.StatusCode);
+
                 }
             }
         }
-    }
 
-    //[TestFixture(Author = "unickq", Description = "Examples")]
-    //[AllureNUnit]
-    //[AllureLink("https://github.com/allure-framework/allure-csharp")]
-    //public class Tests
-    //{
-    //    private HttpClient httpClient;
-
-    //    [OneTimeSetUp]
-    //    public void Setup()
-    //    {
-    //        httpClient = new HttpClient();
-    //    }
-
-    //    [Test]
-    //    [AllureTag("NUnit", "Debug")]
-    //    [AllureIssue("GitHub#1", "https://github.com/allure-framework/allure-csharp")]
-    //    [AllureSeverity(SeverityLevel.critical)]
-    //    [AllureFeature("API")]
-    //    public void TestApiStatus()
-    //    {
-    //        string url = "https://api.sampleapis.com/futurama/questions";
-
-    //        using (HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Get, url))
-    //        {
-    //            using (HttpResponseMessage response = httpClient.SendAsync(request).Result)
-    //            {
-    //                Assert.AreEqual(200, (int)response.StatusCode);
-    //            }
-    //        }
-    //    }
-    //}
-
-
-    //[TestFixture(Author = "unickq", Description = "Examples")]
-    //[AllureNUnit]
-    //[AllureLink("https://github.com/allure-framework/allure-csharp")]
-    //public class Tests
-    //{
-
-
-
-    //    [OneTimeSetUp]
-    //    public void ClearResultsDir()
-    //    {
-    //        AllureLifecycle.Instance.CleanupResultDirectory();
-    //    }
-
-    //    [AllureStep("This method is just saying hello")]
-    //    private void SayHello()
-    //    {
-    //        Console.WriteLine("Hello!");
-    //    }
-
-    //    [Test]
-    //    [AllureTag("NUnit", "Debug")]
-    //    [AllureIssue("GitHub#1", "https://github.com/allure-framework/allure-csharp")]
-    //    [AllureSeverity(SeverityLevel.critical)]
-    //    [AllureFeature("Core")]
-    //   //[AllureId(123)]
-    //    public void EvenTest([Range(0, 5)] int value)
-    //    {
-    //        SayHello();
-
-    //        //Wrapping Step
-    //        AllureLifecycle.Instance.WrapInStep(
-    //            () => { Assert.IsTrue(value % 2 == 0, $"Oh no :( {value} % 2 = {value % 2}"); },
-    //            "Validate calculations");
-    //    }
-    //}
-    [Binding]
-    public class ValidateUserSteps
-    {
-
-        [Given(@"Setup is done")]
-        public void GivenSetupIsDone()
+        [Test]
+        [AllureTag("NUnit", "Debug")]
+        [AllureIssue("GitHub#1", "https://github.com/allure-framework/allure-csharp")]
+        [AllureSeverity(SeverityLevel.critical)]
+        [AllureFeature("API")]
+        public void TestApiPost()
         {
+            string url = "https://api.sampleapis.com/futurama/questions";
 
+            //Код для отправки POST-запроса
+
+            using (HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Post, url))
+            {
+                using (HttpResponseMessage response = httpClient.SendAsync(request).Result)
+                {
+                    var content = response.Content.ReadAsStringAsync().Result;
+                    Console.WriteLine("POST Response content: " + content);
+                    Console.WriteLine("POST Status code: " + (int)response.StatusCode);
+                    Assert.AreEqual(200, (int)response.StatusCode);
+
+
+                }
+            }
         }
 
+        [Test]
+        [AllureTag("NUnit", "Debug")]
+        [AllureIssue("GitHub#1", "https://github.com/allure-framework/allure-csharp")]
+        [AllureSeverity(SeverityLevel.critical)]
+        [AllureFeature("API")]
 
-        [When(@"User is created")]
-        public void WhenUserIsCreated()
+        public void TestApiPut()
         {
+            string url = "https://api.sampleapis.com/futurama/questions";
 
-        }
+            //Код для отправки PUT-запроса
 
-        [Then(@"Validate user info")]
-        public void ThenValidateUserInfo()
-        {
-
+            // Пример:
+            using (HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Put, url))
+            {
+                using (HttpResponseMessage response = httpClient.SendAsync(request).Result)
+                {
+                    var content = response.Content.ReadAsStringAsync().Result;
+                    Console.WriteLine("PUT Response content: " + content);
+                    Console.WriteLine("PUT Status code: " + (int)response.StatusCode);
+                    Assert.AreEqual(200, (int)response.StatusCode);
+                }
+            }
         }
     }
 }
