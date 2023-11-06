@@ -8,7 +8,8 @@ allure generate "ваш путь где создался отчет" --clean
 ```
 # В консоле надо написать команду для открытия отчетов
 
-``` allure open allure-report ```
+``` allure open allure-report 
+```
 
 # Отчет откроеться
 **1. Интерфейс  Allure**
